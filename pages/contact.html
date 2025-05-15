@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오시는 길 - 야무진 아동발달심리상담센터</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .main-banner {
+            background-color: var(--gray-bg);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .main-banner h2 {
+            font-size: 2.2rem;
+            color: var(--dark-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .main-banner p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            color: var(--text-light);
+        }
+        
+        .contact-section {
+            padding: 70px 0;
+            background-color: var(--background-color);
+        }
+        
+        /* 연락처 정보 새 스타일 */
+        .info-cards-container {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+        
+        .info-card {
+            background-color: #5e8b95;
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .info-card h2 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+            font-weight: 600;
+            color: white;
+        }
+        
+        .info-card h2:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: #ff9a76;
+        }
+        
+        .info-items {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+        
+        .info-icon {
+            width: 60px;
+            height: 60px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ff9a76;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .info-content h3 {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        
+        .info-content p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .info-content .emphasis {
+            font-weight: 600;
+            color: white;
+            font-size: 1.2rem;
+        }
+        
+        .hours-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .hours-table tr {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .hours-table tr:last-child {
+            border-bottom: none;
+        }
+        
+        .hours-table td {
+            padding: 15px 0;
+            font-size: 1.1rem;
+        }
+        
+        .hours-table td:first-child {
+            font-weight: 500;
+            width: 30%;
+            color: white;
+        }
+        
+        .map-container {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            height: 450px;
+            margin-bottom: 60px;
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        
+        .contact-form {
+            background-color: var(--light-color);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 60px;
+        }
+        
+        .contact-form h2 {
+            color: var(--dark-color);
+            font-size: 1.6rem;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .contact-form h2:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark-color);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(255, 154, 118, 0.1);
+        }
+        
+        textarea.form-control {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        .form-submit {
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .submit-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .submit-btn:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .booking-section {
+            margin-bottom: 60px;
+            text-align: center;
+            padding: 40px;
+            background-color: #f9f6f2;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .booking-section h2 {
+            color: var(--dark-color);
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 15px;
+            display: inline-block;
+        }
+        
+        .booking-section h2:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .booking-section p {
+            margin-bottom: 25px;
+            color: var(--text-light);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .booking-btn {
+            display: inline-flex;
+            align-items: center;
+            background-color: #03c75a;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+            box-shadow: 0 4px 10px rgba(3, 199, 90, 0.2);
+        }
+        
+        .booking-btn:hover {
+            background-color: #02b351;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(3, 199, 90, 0.3);
+        }
+        
+        .booking-btn i {
+            margin-right: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .direction-info {
+            background-color: #f9f6f2;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 40px;
+        }
+        
+        .direction-info h3 {
+            color: var(--dark-color);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .direction-info h3:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+        
+        .direction-info p {
+            line-height: 1.7;
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+        
+        .direction-info .emphasis {
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+        
+        .parking-info {
+            margin-top: 25px;
+            background-color: rgba(255, 154, 118, 0.1);
+            padding: 15px;
+            border-radius: var(--border-radius);
+            border-left: 3px solid var(--primary-color);
+        }
+        
+        .parking-info h4 {
+            color: var(--dark-color);
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .map-container {
+                height: 350px;
+                margin-bottom: 30px;
+            }
+            
+            .info-item {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            
+            .info-content h3 {
+                margin-top: 10px;
+            }
+            
+            .info-card h2 {
+                text-align: center;
+            }
+            
+            .info-card h2:after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="../images/logo.png" alt="야무진 아동발달심리상담센터 로고">
+                <div class="logo-text">
+                    <h1>야무진 아동발달심리상담센터</h1>
+                    <span>아이들의 건강한 성장을 지원합니다</span>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">홈</a></li>
+                    <li><a href="about.html">선생님 소개</a></li>
+                    <li><a href="therapy.html">치료 안내</a></li>
+                    <li><a href="facility.html">내부 시설</a></li>
+                    <li><a href="fee.html">수업료 안내</a></li>
+                    <li><a href="contact.html" class="active">오시는 길</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="main-banner">
+        <div class="container">
+            <h2>오시는 길</h2>
+            <p>야무진 아동발달심리상담센터의 위치 및 연락처 안내입니다</p>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="container">
+            <div class="booking-section">
+                <h2>네이버 예약으로 간편하게 상담 신청하기</h2>
+                <p>언어치료, 놀이치료, 놀이 짝치료, 놀이 그룹치료, 언어 그룹치료 등 다양한 프로그램을 네이버 예약을 통해 간편하게 신청하실 수 있습니다. 석사 출신의 경력있는 언어치료, 놀이치료 선생님이 수업을 진행합니다.</p>
+                <a href="https://booking.naver.com/booking/5/bizes/953537" class="booking-btn" target="_blank">
+                    <i class="fas fa-calendar-check"></i>
+                    네이버 예약하기
+                </a>
+            </div>
+            
+            <div class="map-container">
+                <!-- 카카오맵 API를 사용하여 실제 주소 지도 표시 -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.6321759307985!2d127.11990037625344!3d37.48566352837349!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca50a8f91cbcd%3A0x26b0b95b7b079f99!2z7ISc7Jq47Yq567OE7IucIOyGoe2MjOq1rCDrrLjsoJXrj5kgNjE4!5e0!3m2!1sko!2skr!4v1648538255407!5m2!1sko!2skr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            
+            <div class="info-cards-container">
+                <div class="info-card">
+                    <h2>연락처 안내</h2>
+                    <div class="info-items">
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>주소</h3>
+                                <p>서울특별시 송파구 송파대로 111, 202동 C802호</p>
+                                <p>지번주소: 서울특별시 송파구 문정동 618, 202동 C802호</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>전화번호</h3>
+                                <p class="emphasis">010-4108-6024</p>
+                                <p>문의 및 예약은 전화 또는 네이버 예약으로 가능합니다.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>이메일</h3>
+                                <p>yamoojincenter@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="info-card">
+                    <h2>운영시간</h2>
+                    <table class="hours-table">
+                        <tr>
+                            <td>평일</td>
+                            <td>11:00 - 18:00</td>
+                        </tr>
+                        <tr>
+                            <td>토요일</td>
+                            <td>예약제</td>
+                        </tr>
+                        <tr>
+                            <td>일요일</td>
+                            <td>휴무</td>
+                        </tr>
+                        <tr>
+                            <td>공휴일</td>
+                            <td>휴무</td>
+                        </tr>
+                    </table>
+                    <p style="margin-top: 15px; color: rgba(255, 255, 255, 0.8); font-size: 0.95rem;">※ 치료 스케줄은 문의해주세요.</p>
+                </div>
+            </div>
+            
+            <div class="direction-info">
+                <h3>오시는 방법 안내</h3>
+                <p><span class="emphasis">송파 365의원과 약국 옆에 202동 C게이트가 있습니다!</span> 여기로 들어오세요~!</p>
+                <p>차량 이용하여 방문 시 1, 5, 6 게이트로 들어오시고 한번 더 오피스텔 전용 입구 차단기로 내려오셔야 합니다. 차량 이용 시 연락 주시면 자세하게 안내해드리겠습니다!</p>
+                
+                <div class="parking-info">
+                    <h4><i class="fas fa-parking"></i> 주차 안내</h4>
+                    <p>주차 가능 (최초 3시간 무료, 추가 30분당 3,000원)</p>
+                    <p>차량 이용시 미리 말씀해주시면 자세하게 설명해드리겠습니다~!</p>
+                </div>
+            </div>
+            
+            <!-- <div class="contact-form">
+                <h2>상담 문의하기</h2>
+                <form id="contactForm" action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">이름</label>
+                        <input type="text" id="name" name="name" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">연락처</label>
+                        <input type="tel" id="phone" name="phone" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">이메일</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">문의 유형</label>
+                        <select id="subject" name="subject" class="form-control" required>
+                            <option value="">선택해주세요</option>
+                            <option value="language">언어치료 문의</option>
+                            <option value="play">놀이치료 문의</option>
+                            <option value="play_group">놀이 그룹치료 문의</option>
+                            <option value="language_group">언어 그룹치료 문의</option>
+                            <option value="test">심리검사 문의</option>
+                            <option value="other">기타 문의</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">문의 내용</label>
+                        <textarea id="message" name="message" class="form-control" required></textarea>
+                    </div>
+                    
+                    <div class="form-submit">
+                        <button type="submit" class="submit-btn">문의하기</button>
+                    </div>
+                </form>
+            </div> -->
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>야무진 아동발달심리상담센터</h3>
+                    <p>상호명: 야무진아동발달심리상담센터</p>
+                    <p>대표자: 김혜주</p>
+                    <p>사업자번호: 677-23-01400</p>
+                    <p>주소: 서울특별시 송파구 송파대로 111, 202동 C802호</p>
+                    <p>연락처: 010-4108-6024</p>
+                    <p>이메일: yamoojincenter@gmail.com</p>
+                </div>
+                <div class="footer-links">
+                    <h3>바로가기</h3>
+                    <ul>
+                        <li><a href="../index.html">홈</a></li>
+                        <li><a href="about.html">선생님 소개</a></li>
+                        <li><a href="therapy.html">치료 안내</a></li>
+                        <li><a href="facility.html">내부 시설</a></li>
+                        <li><a href="fee.html">수업료 안내</a></li>
+                        <li><a href="contact.html">오시는 길</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h3>네이버 예약</h3>
+                    <p>네이버 예약으로 간편하게 상담을 신청하세요.</p>
+                    <a href="https://booking.naver.com/booking/5/bizes/953537" class="btn" target="_blank">예약하기</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 야무진 아동발달심리상담센터. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+    <script>
+        // 폼 제출 처리
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('문의가 접수되었습니다. 빠른 시일 내에 연락드리겠습니다.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>

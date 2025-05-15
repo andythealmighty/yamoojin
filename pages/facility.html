@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내부 시설 - 야무진 아동발달심리상담센터</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .main-banner {
+            background-color: var(--gray-bg);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .main-banner h2 {
+            font-size: 2.2rem;
+            color: var(--dark-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .main-banner p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            color: var(--text-light);
+        }
+        
+        .facility-section {
+            padding: 70px 0;
+            background-color: var(--background-color);
+        }
+        
+        .facility-intro {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .facility-intro h2 {
+            color: var(--dark-color);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 15px;
+            display: inline-block;
+        }
+        
+        .facility-intro h2:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .facility-intro p {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+            color: var(--text-light);
+        }
+        
+        .facility-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        
+        .facility-item {
+            background-color: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .facility-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .facility-image {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .facility-image:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0,0,0,0.3) 100%);
+            z-index: 1;
+        }
+        
+        .facility-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .facility-item:hover .facility-image img {
+            transform: scale(1.05);
+        }
+        
+        .facility-content {
+            padding: 25px;
+        }
+        
+        .facility-content h3 {
+            color: var(--dark-color);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .facility-content h3:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+        
+        .facility-content p {
+            line-height: 1.7;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+        
+        .facility-features {
+            margin-top: 20px;
+        }
+        
+        .facility-features h4 {
+            color: var(--primary-color);
+            margin-bottom: 12px;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .facility-features h4 i {
+            margin-right: 8px;
+        }
+        
+        .feature-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .feature-item {
+            background-color: var(--light-color);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--dark-color);
+            transition: var(--transition);
+        }
+        
+        .feature-item:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 992px) {
+            .facility-gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .facility-gallery {
+                grid-template-columns: 1fr;
+            }
+            
+            .facility-item {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="../images/logo.png" alt="야무진 아동발달심리상담센터 로고">
+                <div class="logo-text">
+                    <h1>야무진 아동발달심리상담센터</h1>
+                    <span>아이들의 건강한 성장을 지원합니다</span>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">홈</a></li>
+                    <li><a href="about.html">선생님 소개</a></li>
+                    <li><a href="therapy.html">치료 안내</a></li>
+                    <li><a href="facility.html" class="active">내부 시설</a></li>
+                    <li><a href="fee.html">수업료 안내</a></li>
+                    <li><a href="contact.html">오시는 길</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="main-banner">
+        <div class="container">
+            <h2>내부 시설</h2>
+            <p>야무진 아동발달심리상담센터의 내부 시설을 소개합니다</p>
+        </div>
+    </section>
+
+    <section class="facility-section">
+        <div class="container">
+            <div class="facility-intro">
+                <h2>아이들을 위한 따뜻한 공간</h2>
+                <p>야무진 아동발달심리상담센터는 아이들이 편안하게 치료받을 수 있는 안전하고 따뜻한 공간을 제공합니다. 아이들의 발달을 촉진하는 다양한 교구와 장비를 갖추고 있으며, 아이들이 즐겁게 참여할 수 있는 환경을 조성하고 있습니다.</p>
+            </div>
+            
+            <div class="facility-gallery">
+                <div class="facility-item">
+                    <div class="facility-image">
+                        <img src="../images/waiting-room.jpg" alt="대기실">
+                    </div>
+                    <div class="facility-content">
+                        <h3>대기실</h3>
+                        <p>아이와 부모님이 함께 편안하게 기다릴 수 있는 대기 공간입니다. 아이들이 좋아하는 책과 장난감을 비치하여 기다리는 시간도 즐겁게 보낼 수 있도록 구성하였습니다.</p>
+                        <div class="facility-features">
+                            <h4><i class="fas fa-check-circle"></i>시설 특징</h4>
+                            <div class="feature-list">
+                                <div class="feature-item">편안한 소파</div>
+                                <div class="feature-item">어린이 도서</div>
+                                <div class="feature-item">교육용 장난감</div>
+                                <div class="feature-item">정수기</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="facility-item">
+                    <div class="facility-image">
+                        <img src="../images/language-room.jpg" alt="언어치료실">
+                    </div>
+                    <div class="facility-content">
+                        <h3>언어치료실</h3>
+                        <p>아이들의 언어발달을 돕기 위한 다양한 교구와 교재가 구비된 공간입니다. 소음이 차단된 조용한 환경에서 집중력 있게 치료를 받을 수 있습니다.</p>
+                        <div class="facility-features">
+                            <h4><i class="fas fa-check-circle"></i>시설 특징</h4>
+                            <div class="feature-list">
+                                <div class="feature-item">방음시설</div>
+                                <div class="feature-item">언어발달 교구</div>
+                                <div class="feature-item">맞춤형 워크북</div>
+                                <div class="feature-item">거울 벽면</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="facility-item">
+                    <div class="facility-image">
+                        <img src="../images/play-room.jpg" alt="놀이치료실">
+                    </div>
+                    <div class="facility-content">
+                        <h3>놀이치료실</h3>
+                        <p>아이들이 자유롭게 놀이를 통해 감정을 표현하고 발달을 촉진할 수 있는 공간입니다. 다양한 놀이 도구와 안전한 놀이 환경을 제공합니다.</p>
+                        <div class="facility-features">
+                            <h4><i class="fas fa-check-circle"></i>시설 특징</h4>
+                            <div class="feature-list">
+                                <div class="feature-item">안전한 바닥재</div>
+                                <div class="feature-item">다양한 놀이도구</div>
+                                <div class="feature-item">역할놀이 코너</div>
+                                <div class="feature-item">감각통합 교구</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="facility-item">
+                    <div class="facility-image">
+                        <img src="../images/counseling-room.jpg" alt="상담실">
+                    </div>
+                    <div class="facility-content">
+                        <h3>상담실</h3>
+                        <p>부모님과 전문가가 아이의 발달 상황과 치료 계획을 상담하는 공간입니다. 편안한 분위기에서 깊이 있는 대화를 나눌 수 있도록 구성되어 있습니다.</p>
+                        <div class="facility-features">
+                            <h4><i class="fas fa-check-circle"></i>시설 특징</h4>
+                            <div class="feature-list">
+                                <div class="feature-item">아늑한 공간</div>
+                                <div class="feature-item">편안한 의자</div>
+                                <div class="feature-item">발달 자료 비치</div>
+                                <div class="feature-item">프라이버시 보장</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>야무진 아동발달심리상담센터</h3>
+                    <p>상호명: 야무진아동발달심리상담센터</p>
+                    <p>대표자: 김혜주</p>
+                    <p>사업자번호: 677-23-01400</p>
+                    <p>주소: 서울특별시 송파구 문정동 618 202동 C802호</p>
+                    <p>연락처: 010-4108-6024</p>
+                    <p>이메일: yamoojincenter@gmail.com</p>
+                </div>
+                <div class="footer-links">
+                    <h3>바로가기</h3>
+                    <ul>
+                        <li><a href="../index.html">홈</a></li>
+                        <li><a href="about.html">선생님 소개</a></li>
+                        <li><a href="therapy.html">치료 안내</a></li>
+                        <li><a href="facility.html">내부 시설</a></li>
+                        <li><a href="fee.html">수업료 안내</a></li>
+                        <li><a href="contact.html">오시는 길</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h3>상담 문의</h3>
+                    <p>궁금한 점이 있으시면 언제든지 연락주세요.</p>
+                    <a href="contact.html" class="btn">문의하기</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 야무진 아동발달심리상담센터. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

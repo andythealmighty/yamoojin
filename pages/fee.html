@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수업료 안내 - 야무진 아동발달심리상담센터</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .main-banner {
+            background-color: var(--gray-bg);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .main-banner h2 {
+            font-size: 2.2rem;
+            color: var(--dark-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .main-banner p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            color: var(--text-light);
+        }
+        
+        .fee-section {
+            padding: 70px 0;
+            background-color: var(--background-color);
+        }
+        
+        .fee-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            padding: 30px;
+            margin-bottom: 25px;
+            transition: var(--transition);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .fee-card:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background-color: var(--primary-color);
+        }
+        
+        .fee-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .fee-card .price {
+            color: var(--primary-color);
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .fee-card h3 {
+            color: var(--dark-color);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+        }
+        
+        .fee-card p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        .fee-card .highlight {
+            background-color: var(--light-color);
+            padding: 12px 15px;
+            border-radius: var(--border-radius);
+            font-weight: 400;
+            color: var(--text-color);
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .fee-card .highlight i {
+            color: var(--primary-color);
+            margin-right: 10px;
+            font-size: 1.1rem;
+            margin-top: 2px;
+        }
+        
+        .notice {
+            background-color: var(--light-color);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            margin-top: 40px;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .notice h3 {
+            color: var(--dark-color);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .notice h3:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+        
+        .notice h3 i {
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+        
+        .notice ul {
+            list-style: none;
+            margin-left: 5px;
+        }
+        
+        .notice ul li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+            color: var(--text-color);
+        }
+        
+        .notice ul li:before {
+            content: "•";
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            font-size: 1.2em;
+        }
+        
+        @media (max-width: 768px) {
+            .fee-card .price {
+                font-size: 1.8rem;
+            }
+            
+            .fee-card h3 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="../images/logo.png" alt="야무진 아동발달심리상담센터 로고">
+                <div class="logo-text">
+                    <h1>야무진 아동발달심리상담센터</h1>
+                    <span>아이들의 건강한 성장을 지원합니다</span>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">홈</a></li>
+                    <li><a href="about.html">선생님 소개</a></li>
+                    <li><a href="therapy.html">치료 안내</a></li>
+                    <li><a href="facility.html">내부 시설</a></li>
+                    <li><a href="fee.html" class="active">수업료 안내</a></li>
+                    <li><a href="contact.html">오시는 길</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="main-banner">
+        <div class="container">
+            <h2>수업료 안내</h2>
+            <p>야무진 아동발달심리상담센터의 수업료 안내입니다</p>
+        </div>
+    </section>
+
+    <section class="fee-section">
+        <div class="container">
+            <div class="fee-card">
+                <div class="price">65,000원</div>
+                <h3>언어 초기상담 & 치료</h3>
+                <p>무발화, 언어발달 지연, 발음이 부정확한 아이, 말더듬 아동 등을 대상으로 합니다.</p>
+                <div class="highlight">
+                    <i class="fas fa-info-circle"></i>
+                    <span>회당 40분 수업 기준입니다.</span>
+                </div>
+            </div>
+            
+            <div class="fee-card">
+                <div class="price">70,000원</div>
+                <h3>놀이 초기상담 & 치료</h3>
+                <p>발달지연과 심리 정서 아동 대상, 양육 코칭이 필요한 아이들을 대상으로 합니다.</p>
+                <div class="highlight">
+                    <i class="fas fa-info-circle"></i>
+                    <span>회당 40분 수업 기준입니다.</span>
+                </div>
+            </div>
+            
+            <div class="fee-card">
+                <div class="price">가격 문의</div>
+                <h3>심리검사 & 해석상담</h3>
+                <p>MMPI(다면적인성검사), TCI(기질검사), SCT(문장완성검사) 등 다양한 심리검사를 제공합니다.</p>
+                <div class="highlight">
+                    <i class="fas fa-info-circle"></i>
+                    <span>검사 종류에 따라 가격이 상이합니다. 전화로 문의해주세요.</span>
+                </div>
+            </div>
+            
+            <div class="fee-card">
+                <div class="price">가격 문의</div>
+                <h3>언어발달검사</h3>
+                <p>SELSI, PRES, REVT, 구문의미이해력, P-FA 검사 등 언어발달 관련 전문 검사를 제공합니다.</p>
+                <div class="highlight">
+                    <i class="fas fa-info-circle"></i>
+                    <span>검사 종류에 따라 가격이 상이합니다. 전화로 문의해주세요.</span>
+                </div>
+            </div>
+            
+            <div class="notice">
+                <h3><i class="fas fa-exclamation-circle"></i>안내사항</h3>
+                <ul>
+                    <li>모든 수업은 예약제로 운영됩니다.</li>
+                    <li>치료 전 상담 및 평가가 필요할 수 있습니다.</li>
+                    <li>취소 및 변경은 수업 24시간 전까지 연락 부탁드립니다.</li>
+                    <li>자세한 문의사항은 전화(010-4108-6024) 또는 이메일(yamoojincenter@gmail.com)로 연락주세요.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>야무진 아동발달심리상담센터</h3>
+                    <p>상호명: 야무진아동발달심리상담센터</p>
+                    <p>대표자: 김혜주</p>
+                    <p>사업자번호: 677-23-01400</p>
+                    <p>주소: 서울특별시 송파구 문정동 618 202동 C802호</p>
+                    <p>연락처: 010-4108-6024</p>
+                    <p>이메일: yamoojincenter@gmail.com</p>
+                </div>
+                <div class="footer-links">
+                    <h3>바로가기</h3>
+                    <ul>
+                        <li><a href="../index.html">홈</a></li>
+                        <li><a href="about.html">선생님 소개</a></li>
+                        <li><a href="therapy.html">치료 안내</a></li>
+                        <li><a href="facility.html">내부 시설</a></li>
+                        <li><a href="fee.html">수업료 안내</a></li>
+                        <li><a href="contact.html">오시는 길</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h3>상담 문의</h3>
+                    <p>궁금한 점이 있으시면 언제든지 연락주세요.</p>
+                    <a href="contact.html" class="btn">문의하기</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 야무진 아동발달심리상담센터. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

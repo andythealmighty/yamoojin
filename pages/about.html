@@ -1,1 +1,374 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선생님 소개 - 야무진 아동발달심리상담센터</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        .page-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/about-bg.jpg') no-repeat center center/cover;
+        }
+        
+        .teacher-profile {
+            padding: 90px 0;
+            position: relative;
+        }
+        
+        .teacher-profile:nth-child(even) {
+            background-color: var(--light-color);
+        }
+        
+        .teacher-profile:not(:first-child)::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background-color: inherit;
+            transform: skewY(-2deg);
+            transform-origin: top right;
+            z-index: 0;
+        }
+        
+        .profile-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 50px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .profile-image {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            position: relative;
+        }
+        
+        .profile-image::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--primary-color);
+            opacity: 0;
+            transition: var(--transition);
+            z-index: 1;
+        }
+        
+        .profile-container:hover .profile-image::before {
+            opacity: 0.1;
+        }
+        
+        .profile-image img {
+            width: 100%;
+            display: block;
+            transition: transform 0.6s;
+        }
+        
+        .profile-container:hover .profile-image img {
+            transform: scale(1.05);
+        }
+        
+        .profile-content h2 {
+            color: var(--dark-color);
+            margin-bottom: 15px;
+            font-size: 2rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .profile-content h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .profile-content .position {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            font-weight: 500;
+            display: block;
+        }
+        
+        .profile-section {
+            margin-bottom: 30px;
+            opacity: 1;
+            transform: translateY(0);
+            transition: var(--transition);
+        }
+        
+        .profile-section h3 {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .profile-section h3::before {
+            content: "";
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary-color);
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+        
+        .profile-section ul {
+            list-style: none;
+            margin-left: 20px;
+        }
+        
+        .profile-section ul li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+            transition: var(--transition);
+        }
+        
+        .profile-section ul li::before {
+            content: "•";
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            transition: var(--transition);
+        }
+        
+        .profile-section ul li:hover {
+            color: var(--primary-color);
+            transform: translateX(5px);
+        }
+        
+        @media (max-width: 992px) {
+            .profile-container {
+                grid-template-columns: 1fr 1.5fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .profile-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .profile-image {
+                max-width: 400px;
+                margin: 0 auto 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="../images/logo.png" alt="야무진 아동발달심리상담센터 로고">
+                <div class="logo-text">
+                    <h1>야무진 아동발달심리상담센터</h1>
+                    <span>아이들의 건강한 성장을 지원합니다</span>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">홈</a></li>
+                    <li><a href="about.html" class="active">선생님 소개</a></li>
+                    <li><a href="therapy.html">치료 안내</a></li>
+                    <li><a href="facility.html">내부 시설</a></li>
+                    <li><a href="fee.html">수업료 안내</a></li>
+                    <li><a href="contact.html">오시는 길</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
+    <section class="main-banner">
+        <div class="container">
+            <h2>전문 선생님 소개</h2>
+            <p>야무진 아동발달심리상담센터의 전문가들입니다</p>
+        </div>
+    </section>
+
+    <section class="teacher-profile" id="kim">
+        <div class="container">
+            <div class="profile-container">
+                <div class="profile-image">
+                    <img src="../images/teacher1.jpg" alt="김혜주 선생님">
+                </div>
+                <div class="profile-content">
+                    <h2>김혜주 선생님</h2>
+                    <span class="position">센터장 / 언어치료사</span>
+                    
+                    <div class="profile-section">
+                        <h3>학력</h3>
+                        <ul>
+                            <li>루터대학교 언어치료학과 졸업</li>
+                            <li>루터대학교 루터대학원 언어치료학과 졸업</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="profile-section">
+                        <h3>경력</h3>
+                        <ul>
+                            <li>서울 광진아동청소년 발달센터</li>
+                            <li>서울 프라나이비인후과</li>
+                            <li>아름다운목소리이비인후과</li>
+                            <li>동탄 아주시원한 이비인후과 부설 힐메이트심리상담센터</li>
+                            <li>성남 우리아동발달상담센터</li>
+                            <li>잠실 연세수언어심리연구원</li>
+                            <li>릴리프맘 홈티</li>
+                            <li>야무진홈티</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="profile-section">
+                        <h3>자격증</h3>
+                        <ul>
+                            <li>1급 언어재활사</li>
+                            <li>인지학습상담전문가(2급)</li>
+                            <li>인지행동상담사(3급)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="teacher-profile" id="shim">
+        <div class="container">
+            <div class="profile-container">
+                <div class="profile-image">
+                    <img src="../images/teacher2.jpg" alt="심혜수 선생님">
+                </div>
+                <div class="profile-content">
+                    <h2>심혜수 선생님</h2>
+                    <span class="position">놀이치료사</span>
+                    
+                    <div class="profile-section">
+                        <h3>학력</h3>
+                        <ul>
+                            <li>숙명여자대학교 가족자원경영학과</li>
+                            <li>숙명여자대학교 일반대학원 아동심리치료 전공</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="profile-section">
+                        <h3>경력</h3>
+                        <ul>
+                            <li>굿네이버스 좋은마음센터 안양지부</li>
+                            <li>아이들 세상의원</li>
+                            <li>숙명여자대학교 대학원 아동복지학과내 놀이치료실</li>
+                            <li>아동청소년상담센터 맑음</li>
+                            <li>휴앤아이 심리상담센터</li>
+                            <li>아주시원한 이비인후과 부설 힐메이트 심리상담센터</li>
+                            <li>동탄 위드아동발달상담소</li>
+                            <li>허그맘허그인 평촌점</li>
+                            <li>연세해피마인드 정신과 부설 연구소</li>
+                            <li>365 늘봄 아동심리발달센터</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="profile-section">
+                        <h3>자격증</h3>
+                        <ul>
+                            <li>놀이심리상담사 2급</li>
+                            <li>보육교사 2급</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="teacher-profile" id="moon">
+        <div class="container">
+            <div class="profile-container">
+                <div class="profile-image">
+                    <img src="../images/teacher3.jpg" alt="문인혜 선생님">
+                </div>
+                <div class="profile-content">
+                    <h2>문인혜 선생님</h2>
+                    <span class="position">언어치료사</span>
+                    
+                    <div class="profile-section">
+                        <h3>학력</h3>
+                        <ul>
+                            <li>가천대학교 특수치료대학원 언어치료학 전공</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="profile-section">
+                        <h3>경력</h3>
+                        <ul>
+                            <li>연수종합사회복지관</li>
+                            <li>다연심리재활교육센터</li>
+                            <li>동탄 아주시원한 이비인후과 부설 힐메이트심리상담센터</li>
+                            <li>시립목동어린이집</li>
+                            <li>구름온 심리상담센터</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="profile-section">
+                        <h3>자격증</h3>
+                        <ul>
+                            <li>1급 언어재활사</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>야무진 아동발달심리상담센터</h3>
+                    <p>상호명: 야무진아동발달심리상담센터</p>
+                    <p>대표자: 김혜주</p>
+                    <p>사업자번호: 677-23-01400</p>
+                    <p>주소: 서울특별시 송파구 문정동 618 202동 C802호</p>
+                    <p>연락처: 010-4108-6024</p>
+                    <p>이메일: yamoojincenter@gmail.com</p>
+                </div>
+                <div class="footer-links">
+                    <h3>바로가기</h3>
+                    <ul>
+                        <li><a href="../index.html">홈</a></li>
+                        <li><a href="about.html">선생님 소개</a></li>
+                        <li><a href="therapy.html">치료 안내</a></li>
+                        <li><a href="facility.html">내부 시설</a></li>
+                        <li><a href="fee.html">수업료 안내</a></li>
+                        <li><a href="contact.html">오시는 길</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h3>상담 문의</h3>
+                    <p>궁금한 점이 있으시면 언제든지 연락주세요.</p>
+                    <a href="contact.html" class="btn">문의하기</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 야무진 아동발달심리상담센터. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
